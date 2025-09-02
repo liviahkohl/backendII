@@ -15,11 +15,13 @@ app.get('/ufs', (req, res) => {
 })
 
 app.get('/ufs/:iduf', (req, res) => {
+    const idUf = req.params.iduf;
     const uf = buscarUfPorId(req.params.iduf);
+    
 
     if (uf) {
         res.json(uf);
-    } else if (isNaN(parseInt(req.params.iduf))) {
+    } else if (isNaN(parseInt(idUf))) {
         res.status(400).send({ "erro": "Requisição inválida"});
     } else {
         res.status(404).send({ "erro": "UF não encontrada"});
