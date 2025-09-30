@@ -15,7 +15,7 @@ app.get('/personagensHP', (req, res) => {
 })
 
 app.get('/personagensHP/:idPer', (req, res) => {
-    const idper = req.params.iduf;
+    const idPer = req.params.iduf;
     const Per = buscarPerPorId(req.params.iduf);
     
 
